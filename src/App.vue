@@ -6,15 +6,15 @@
         <component :is="currentView"></component>
       </keep-alive>
       <!--<mainView :is="currentView"></mainView>-->
-      <select name="" id="">
-        <option value="1">{{num}}</option>
-        <compontent-g></compontent-g>
-        <optionC></optionC>
-      </select>
-      <compontent-slot>
-        <p>这是一个插槽</p>
-      </compontent-slot>
-      <router-view/>
+      <!--<select name="" id="">-->
+        <!--<option value="1">{{num}}</option>-->
+        <!--<compontent-g></compontent-g>-->
+        <!--<optionC></optionC>-->
+      <!--</select>-->
+      <!--<compontent-slot>-->
+        <!--<p>这是一个插槽</p>-->
+      <!--</compontent-slot>-->
+      <!--<router-view/>-->
     </div>
     <viewFooter v-on:tabIsChange="changeHeader"></viewFooter>
   </div>
