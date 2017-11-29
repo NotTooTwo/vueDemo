@@ -2,6 +2,7 @@
     <div>
         <h1>{{hello}} world</h1>
         <compontent-g></compontent-g>
+        <slot>这是一个插槽</slot>
     </div>
 </template>
 <script type="es6">

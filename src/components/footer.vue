@@ -9,9 +9,9 @@ export default {
   data(){
     return {
       tab:[
-        {text:'index'},
-        {text:'mian'},
-        {text:'my'}
+        {text:'indexView'},
+        {text:'mainView'},
+        {text:'myView'}
       ],
       activeTab:0
     }

@@ -11,7 +11,7 @@ Vue.component('compontent-g', {
   template: '<option value="2">2</option>  '
 })
 Vue.component('compontent-slot', {
-  template: '<div>这个准备放一个插槽<slot>这是一些备用内容</slot></div> '
+  template: '<div>这个准备放一个插槽<slot name="slot1">这是一些备用内容1</slot><slot>这是一些备用内容2</slot></div> '
 })
 new Vue({
   el: '#app',
