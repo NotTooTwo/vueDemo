@@ -40,7 +40,6 @@
     components: {viewHeader, viewFooter, optionC, mainView, indexView, myView},
     methods: {
       changeHeader(msg){
-        console.log(msg);
         this.headerTest = msg.tab.text;
         this.currentView = msg.tab.text
       }
@@ -50,10 +49,7 @@
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  font-size: 1.4rem;
   color: #2c3e50;
 }
 .viewMain{
