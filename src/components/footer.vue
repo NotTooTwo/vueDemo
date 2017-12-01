@@ -1,30 +1,30 @@
 <template>
     <div id="viewFooter">
-      <span v-for="(item,key) in tab" :class="{active:activeTab===key}" @click="tabChange(key)">{{item.text}}</span>
+      <span v-for="(item,key) in tab" :class="{active:activeTab===key}" @click="tabChange(key)" v-link="{path:'/mainView'}">{{item.text}}</span>
     </div>
 </template>
 <script type="es6">
-export default {
-  name: 'viewFooter',
-  data(){
-    return {
-      tab:[
-        {text:'indexView'},
-        {text:'mainView'},
-        {text:'myView'}
-      ],
-      activeTab:0
-    }
-  },
-  methods:{
-    tabChange(key){
-      this.activeTab=key;
-      this.$emit('tabIsChange',{
-        tab: this.tab[key]
-      })
+  export default {
+    name: 'viewFooter',
+    data(){
+      return {
+        tab:[
+          {text:'indexView',link:'/indexView'},
+          {text:'mainView',link:'/mainView'},
+          {text:'myView',link:'/myView'}
+        ],
+        activeTab:0
+      }
+    },
+    methods:{
+      tabChange(key){
+        this.activeTab=key;
+        this.$emit('tabIsChange',{
+          tab: this.tab[key]
+        })
+      }
     }
   }
-}
 
 </script>
 <style scoped>

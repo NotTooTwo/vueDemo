@@ -1,5 +1,6 @@
 <template>
     <div>
+      <anchored-heading :level="2">Index</anchored-heading>
       <h1>INDEX</h1>
       <ul class="list">
         <li v-for="item in list">
@@ -10,6 +11,22 @@
     </div>
 </template>
 <script type="es6">
+  import Vue from 'vue'
+  Vue.component('anchoredHeading', {
+    render: function (createElement) {
+      return createElement(
+        'h' + this.level,   // tag name 标签名称
+        this.$slots.default // 子组件中的阵列
+      )
+    },
+    props: {
+      level: {
+        type: Number,
+        required: true
+      }
+    }
+  })
+
 export default {
   name: 'indexView',
   data(){
