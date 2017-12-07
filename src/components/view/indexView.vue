@@ -2,6 +2,7 @@
     <div>
       <anchored-heading :level="2">Index</anchored-heading>
       <h1>INDEX</h1>
+      <bolls></bolls>
       <ul class="list">
         <li v-for="item in list">
           <div>{{item.title}}</div>
@@ -12,6 +13,8 @@
 </template>
 <script type="es6">
   import Vue from 'vue'
+  import bolls from '../some/bolls.vue'
+
   Vue.component('anchoredHeading', {
     render: function (createElement) {
       return createElement(
@@ -50,7 +53,8 @@ export default {
         }
       ]
     }
-  }
+  },
+  components:{bolls}
 }
 
 </script>
