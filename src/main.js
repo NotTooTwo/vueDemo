@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import './assets/css/reset.css'
 import './assets/css/animate.css'
+//import store from './store/store.js'
 
 Vue.config.productionTip = false
 
@@ -69,6 +70,7 @@ new Vue({
     })(window);
   },
   router,
+  //store,
   template: '<App/>',
   components: { App }
 })

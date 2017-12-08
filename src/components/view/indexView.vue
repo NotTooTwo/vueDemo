@@ -1,10 +1,33 @@
 <template>
     <div>
-      <anchored-heading :level="2">Index</anchored-heading>
-      <h1>INDEX</h1>
-      <bolls></bolls>
+      <anchored-heading :level="2">INDEX</anchored-heading>
+      <keep-alive>
+        <bolls key="boll1"></bolls>
+      </keep-alive>
       <ul class="list">
-        <li v-for="item in list">
+        <li v-for="item in list"  :key="item.title" @click="jumpTo(item.id,item.components)">
+          <!--<router-link :to="'/newDetail/'+item.id"  v-for="item in list"  :key="item.title" tag="li">-->
+            <div>{{item.title}}</div>
+            <p>{{item.info}}</p>
+          <!--</router-link>-->
+        </li>
+        <li v-for="item in list"  :key="item.title" @click="jumpTo(item.id,item.components)">
+          <div>{{item.title}}</div>
+          <p>{{item.info}}</p>
+        </li>
+        <li v-for="item in list"  :key="item.title" @click="jumpTo(item.id,item.components)">
+          <div>{{item.title}}</div>
+          <p>{{item.info}}</p>
+        </li>
+        <li v-for="item in list"  :key="item.title" @click="jumpTo(item.id,item.components)">
+          <div>{{item.title}}</div>
+          <p>{{item.info}}</p>
+        </li>
+        <li v-for="item in list"  :key="item.title" @click="jumpTo(item.id,item.components)">
+          <div>{{item.title}}</div>
+          <p>{{item.info}}</p>
+        </li>
+        <li v-for="item in list"  :key="item.title" @click="jumpTo(item.id,item.components)">
           <div>{{item.title}}</div>
           <p>{{item.info}}</p>
         </li>
@@ -36,25 +59,59 @@ export default {
     return {
       list:[
         {
+          id:1,
           title:'title',
-          info:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad animi delectus dolorem, ducimus eligendi, hic ipsum iure labore nam non nulla odit perspiciatis possimus, quisquam sed tempora temporibus vitae voluptatibus!'
-        },
-        {
-          title:'title1',
-          info:'Lorem1 ipsum dolor sit amet, consectetur adipisicing elit. Ad animi delectus dolorem, ducimus eligendi, hic ipsum iure labore nam non nulla odit perspiciatis possimus, quisquam sed tempora temporibus vitae voluptatibus!'
-        },
-        {
-          title:'title2',
-          info:'Lorem2 ipsum dolor sit amet, consectetur adipisicing elit. Ad animi delectus dolorem, ducimus eligendi, hic ipsum iure labore nam non nulla odit perspiciatis possimus, quisquam sed tempora temporibus vitae voluptatibus!'
-        },
-        {
-          title:'title3',
-          info:'Lorem3 ipsum dolor sit amet, consectetur adipisicing elit. Ad animi delectus dolorem, ducimus eligendi, hic ipsum iure labore nam non nulla odit perspiciatis possimus, quisquam sed tempora temporibus vitae voluptatibus!'
+          components:'bolls',
+          info:'Lorem perspiciatis possimus, quisquam sed tempora temporibus vitae voluptatibus!'
         }
       ]
     }
   },
-  components:{bolls}
+  methods:{
+    jumpTo(id,components){
+      console.log( this.$router)
+      this.$router.push({
+        name:'newDetail',
+        params:{id,components}
+      })
+    }
+  },
+  components:{bolls},
+  updated () {
+    this.$nextTick(function(){
+      //let position = this.$store.state.position //返回页面取出来
+      //window.scroll(0, position)
+    })
+  },
+  beforeRouteEnter (to, from, next) {
+    // 在渲染该组件的对应路由被 confirm 前调用
+    // 不！能！获取组件实例 `this`
+    // 因为当守卫执行前，组件实例还没被创建
+    next(vm => {
+      // 通过 `vm` 访问组件实例
+    })
+    console.log('index enter')
+  },
+  beforeRouteUpdate (to, from, next) {
+    // 在当前路由改变，但是该组件被复用时调用
+    // 举例来说，对于一个带有动态参数的路径 /foo/:id，在 /foo/1 和 /foo/2 之间跳转的时候，
+    // 由于会渲染同样的 Foo 组件，因此组件实例会被复用。而这个钩子就会在这个情况下被调用。
+    // 可以访问组件实例 `this`
+    next(vm => {
+      // 通过 `vm` 访问组件实例
+    })
+    console.log('index update')
+  },
+  beforeRouteLeave (to, from, next) {
+    // 导航离开该组件的对应路由时调用
+    // 可以访问组件实例 `this`
+    let position = window.scrollY;
+    //this.$store.commit('SAVE_POSITION', position) //vuex-离开路由时把位置存起来
+    next(vm => {
+      // 通过 `vm` 访问组件实例
+    })
+    console.log('index leave')
+  }
 }
 
 </script>

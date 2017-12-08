@@ -1,6 +1,5 @@
 <template>
-    <transition-group name="fade">
-      <h1 key="h1">bolls</h1>
+    <transition-group name="fade" tag="div">
       <canvas id="box" key="canvas"></canvas>
     </transition-group>
 </template>
@@ -9,7 +8,7 @@ export default {
   name: 'transition-opacity',
   data(){
     return {
-        
+
     }
   },
   mounted(){
@@ -53,9 +52,6 @@ export default {
         }
       }
     }
-    var ball = new Ball(50,50,'#f00');
-    ball.render();
-
     let ballArr = [];
     let colorArr = ['#f0f','#ff0','#a19','#e33','#8ae'];
 

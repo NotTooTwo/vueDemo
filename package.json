@@ -13,11 +13,13 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "animate.css": "^3.5.2",
     "lodash": "^4.17.4",
     "tween": "^0.9.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
-    "vue2-animate": "^1.0.4"
+    "vue2-animate": "^1.0.4",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

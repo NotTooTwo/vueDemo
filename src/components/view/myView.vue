@@ -1,6 +1,7 @@
 <template>
     <div>
       <h1>MY</h1>
+      <h2>id:{{$route.params.myId}}</h2>
       <!--<live></live>-->
     </div>
 </template>
@@ -11,6 +12,12 @@ export default {
   data(){
     return {
 
+    }
+  },
+  watch: {
+    '$route' (to, from) {
+      // 对路由变化作出响应...
+      console.log(to,from)
     }
   }
 }
